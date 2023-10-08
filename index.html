@@ -11,11 +11,18 @@
   </head>
   <body>
     <div id="airbnb_map"></div>
+    <div id="bubble_plot"></div>
 
     <script type="text/javascript">
-      // var spec = "js/airbnb_map.vg.json";
-      const spec = "./js/airbnb_map.json";
-      vegaEmbed("#airbnb_map", spec)
+      const spec1 = "./js/airbnb_map.json";
+      const spec2 = "./js/bubble_plot.json";
+      vegaEmbed("#airbnb_map", spec1)
+        .then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        })
+        .catch(console.error);
+
+      vegaEmbed("#bubble_plot", spec1)
         .then(function (result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         })
